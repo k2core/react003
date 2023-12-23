@@ -3,13 +3,10 @@ import "./App.css";
 
 function App() {
   const [time, updateTime] = useState(new Date());
-  useEffect(() => {
-    // timer updation logic
-    const timer = setInterval(() => {
-      updateTime(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
+  // React의 리렌더링을 활용하여 setTimeout으로 구현해 보자.
+  setTimeout(() => {
+    updateTime(new Date());
+  }, 1000);
 
   return (
     <div className="App">
